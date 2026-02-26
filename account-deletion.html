@@ -59,12 +59,32 @@
       background: #fffdf8;
       font-weight: 600;
     }
+    .langbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .langbtn {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffbf3;
+      padding: 8px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .langbtn.active {
+      background: #ffefc7;
+      border-color: #e3bf66;
+    }
     .warn {
       background: var(--warn-bg);
       border: 1px solid var(--warn-line);
       border-radius: 10px;
       padding: 12px;
     }
+    .deletion { display: none; }
+    .deletion.active { display: block; }
     code {
       background: #f9f4ea;
       border: 1px solid #f1e6d2;
@@ -80,14 +100,18 @@
     <div class="panel">
       <h1>TopArena Account Deletion</h1>
       <p class="muted"><strong>Last updated:</strong> February 26, 2026</p>
-      <p>This page explains how to initiate account deletion and what data is removed.</p>
       <div class="links">
         <a class="link-pill" href="./index.html">Privacy Policy</a>
         <a class="link-pill" href="./terms.html">Terms of Use</a>
       </div>
+      <div class="langbar">
+        <button type="button" class="langbtn active" data-lang="en">English</button>
+        <button type="button" class="langbtn" data-lang="uz">O'zbek</button>
+        <button type="button" class="langbtn" data-lang="ru">Русский</button>
+      </div>
     </div>
 
-    <div class="panel">
+    <section class="panel deletion active" id="deletion-en">
       <h2>How to Request Deletion</h2>
       <ol>
         <li>Open <code>Profile > Settings > Delete Account</code> in the app.</li>
@@ -99,7 +123,7 @@
       <h2>What Is Deleted</h2>
       <ul>
         <li>Account profile, authentication linkage, and personal profile media.</li>
-        <li>User-owned content and activity where removal is technically possible without breaking league history integrity.</li>
+        <li>User-owned content and activity where removal is technically possible.</li>
       </ul>
 
       <h2>What May Be Retained</h2>
@@ -113,7 +137,81 @@
 
       <h2>Confirmation and Safety</h2>
       <p>TopArena may ask for account ownership verification before irreversible deletion to prevent unauthorized deletion requests.</p>
-    </div>
+    </section>
+
+    <section class="panel deletion" id="deletion-uz">
+      <h2>Hisobni o'chirishni so'rash</h2>
+      <ol>
+        <li>Ilovada <code>Profile > Settings > Delete Account</code> bo'limini oching.</li>
+        <li>O'chirish ogohlantirishini ko'rib chiqing va tasdiqlang.</li>
+        <li>Agar hisobga kira olmasangiz, <a href="mailto:toparena.app@gmail.com?subject=TopArena%20Account%20Access%20Recovery">toparena.app@gmail.com</a> orqali kirishni tiklang va keyin ilovada o'chirishni yakunlang.</li>
+      </ol>
+      <p class="warn"><strong>App Review uchun eslatma:</strong> hisobni o'chirishni boshlash ilovada <code>Profile > Settings > Delete Account</code> orqali mavjud.</p>
+
+      <h2>Nimalar o'chiriladi</h2>
+      <ul>
+        <li>Hisob profili, autentifikatsiya bog'lanishi va shaxsiy profil media fayllari.</li>
+        <li>Texnik jihatdan olib tashlash mumkin bo'lgan foydalanuvchi kontenti va faoliyati.</li>
+      </ul>
+
+      <h2>Nimalar saqlanishi mumkin</h2>
+      <ul>
+        <li>Xavfsizlik loglari va qonuniy/firibgarlikning oldini olish uchun zarur cheklangan yozuvlar.</li>
+        <li>Shaxsni aniqlamaydigan umumlashtirilgan yoki anonimlashtirilgan analitika.</li>
+      </ul>
+
+      <h2>O'chirish muddati</h2>
+      <p>So'rov 7 kun ichida qabul qilinganini tasdiqlaymiz va odatda 30 kun ichida yakunlaymiz, agar ayrim yozuvlarni uzoqroq saqlash qonun bilan talab qilinmasa.</p>
+
+      <h2>Tasdiqlash va xavfsizlik</h2>
+      <p>Ruxsatsiz o'chirishlarning oldini olish uchun TopArena qaytarib bo'lmaydigan o'chirishdan oldin hisob egasini tasdiqlashi mumkin.</p>
+    </section>
+
+    <section class="panel deletion" id="deletion-ru">
+      <h2>Как запросить удаление аккаунта</h2>
+      <ol>
+        <li>Откройте в приложении <code>Profile > Settings > Delete Account</code>.</li>
+        <li>Проверьте предупреждение и подтвердите удаление.</li>
+        <li>Если вы не можете войти в аккаунт, свяжитесь с <a href="mailto:toparena.app@gmail.com?subject=TopArena%20Account%20Access%20Recovery">toparena.app@gmail.com</a> для восстановления доступа, затем завершите удаление в приложении.</li>
+      </ol>
+      <p class="warn"><strong>Примечание для App Review:</strong> запуск удаления аккаунта доступен в приложении по пути <code>Profile > Settings > Delete Account</code>.</p>
+
+      <h2>Что удаляется</h2>
+      <ul>
+        <li>Профиль аккаунта, привязка аутентификации и личные медиа профиля.</li>
+        <li>Пользовательский контент и активность, которые технически возможно удалить.</li>
+      </ul>
+
+      <h2>Что может сохраняться</h2>
+      <ul>
+        <li>Логи безопасности и ограниченные записи, требуемые для предотвращения мошенничества или по закону.</li>
+        <li>Агрегированная или обезличенная аналитика, не позволяющая идентифицировать пользователя.</li>
+      </ul>
+
+      <h2>Срок удаления</h2>
+      <p>Запрос подтверждается в течение 7 дней и обычно завершается в течение 30 дней, если закон не требует более длительного хранения отдельных записей.</p>
+
+      <h2>Подтверждение и безопасность</h2>
+      <p>TopArena может запросить подтверждение владения аккаунтом перед необратимым удалением для предотвращения несанкционированных запросов.</p>
+    </section>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.langbtn');
+    const sections = document.querySelectorAll('.deletion');
+
+    function showLang(lang) {
+      sections.forEach((section) => {
+        section.classList.toggle('active', section.id === `deletion-${lang}`);
+      });
+      buttons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => showLang(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>

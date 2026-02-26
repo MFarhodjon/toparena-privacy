@@ -57,6 +57,26 @@
       background: #f8fbff;
       font-weight: 600;
     }
+    .langbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .langbtn {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #f6f9ff;
+      padding: 8px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .langbtn.active {
+      background: #e4efff;
+      border-color: #9dbbe8;
+    }
+    .terms { display: none; }
+    .terms.active { display: block; }
     code {
       background: #f1f5fa;
       border: 1px solid #e4ecf5;
@@ -72,55 +92,145 @@
     <div class="panel">
       <h1>TopArena Terms of Use</h1>
       <p class="muted"><strong>Effective date:</strong> February 26, 2026</p>
-      <p>These Terms govern your access to and use of the TopArena mobile application and related services.</p>
       <div class="chip-row">
         <a class="chip" href="./index.html">Privacy Policy</a>
         <a class="chip" href="./account-deletion.html">Account Deletion</a>
       </div>
+      <div class="langbar">
+        <button type="button" class="langbtn active" data-lang="en">English</button>
+        <button type="button" class="langbtn" data-lang="uz">O'zbek</button>
+        <button type="button" class="langbtn" data-lang="ru">Русский</button>
+      </div>
     </div>
 
-    <div class="panel">
+    <section class="panel terms active" id="terms-en">
       <h2>1. Acceptance of Terms</h2>
       <p>By creating an account or using TopArena, you agree to these Terms and the Privacy Policy.</p>
 
-      <h2>2. Eligibility and Accounts</h2>
+      <h2>2. Accounts</h2>
       <ul>
-        <li>You are responsible for the accuracy of account information you provide.</li>
-        <li>You are responsible for activity performed under your account credentials.</li>
-        <li>You must keep login credentials secure and notify us of unauthorized use.</li>
+        <li>You are responsible for the accuracy of account information.</li>
+        <li>You are responsible for activity under your account credentials.</li>
+        <li>Keep your login credentials secure.</li>
       </ul>
 
-      <h2>3. Registration Consent Text (for App Screen)</h2>
-      <p>Use this sentence on your registration page with links to this Terms page and Privacy Policy page:</p>
+      <h2>3. Registration Consent Text</h2>
       <p><code>By creating an account, you agree to the Terms of Use and Privacy Policy.</code></p>
 
       <h2>4. User Content</h2>
-      <p>You may upload content such as profile photos, team logos, and posts. You confirm that:</p>
-      <ul>
-        <li>You own the content or have permission to use it.</li>
-        <li>Your content does not violate laws or third-party rights.</li>
-      </ul>
-      <p>TopArena may remove content that violates these Terms, legal requirements, or platform safety rules.</p>
+      <p>You may upload profile photos, team logos, and posts. You confirm you have rights to upload this content and that it does not violate laws or third-party rights.</p>
 
       <h2>5. Prohibited Conduct</h2>
       <ul>
-        <li>Attempting unauthorized access to accounts, data, or infrastructure.</li>
-        <li>Posting illegal, abusive, threatening, defamatory, or infringing content.</li>
-        <li>Using bots or abuse patterns that degrade service quality.</li>
+        <li>Unauthorized access to accounts, data, or systems.</li>
+        <li>Illegal, abusive, threatening, or infringing content.</li>
+        <li>Automated abuse that harms service stability.</li>
       </ul>
 
-      <h2>6. Account Suspension and Termination</h2>
-      <p>TopArena may suspend or terminate accounts for severe or repeated violations. You may request account deletion at any time through the account deletion process.</p>
+      <h2>6. Suspension and Termination</h2>
+      <p>TopArena may restrict or terminate accounts for serious or repeated violations.</p>
 
-      <h2>7. Availability and Changes</h2>
-      <p>TopArena may update features, security controls, and these Terms as needed. Material changes are posted with an updated effective date.</p>
+      <h2>7. Changes</h2>
+      <p>TopArena may update these Terms over time. Material updates are published with a new date.</p>
 
-      <h2>8. Disclaimer and Limitation</h2>
-      <p>TopArena is provided on an "as available" basis. To the extent permitted by law, TopArena disclaims implied warranties and limits liability for indirect damages.</p>
+      <h2>8. Limitation</h2>
+      <p>TopArena is provided on an "as available" basis to the extent permitted by law.</p>
 
       <h2>9. Contact</h2>
       <p>Email: <a href="mailto:toparena.app@gmail.com">toparena.app@gmail.com</a></p>
-    </div>
+    </section>
+
+    <section class="panel terms" id="terms-uz">
+      <h2>1. Shartlarni qabul qilish</h2>
+      <p>TopArena hisobini yaratish yoki ilovadan foydalanish orqali siz ushbu Shartlar va Maxfiylik siyosatini qabul qilasiz.</p>
+
+      <h2>2. Hisoblar</h2>
+      <ul>
+        <li>Hisob ma'lumotlarining to'g'riligi uchun foydalanuvchi javobgar.</li>
+        <li>Hisob orqali bajarilgan harakatlar uchun foydalanuvchi javobgar.</li>
+        <li>Kirish ma'lumotlarini maxfiy saqlang.</li>
+      </ul>
+
+      <h2>3. Ro'yxatdan o'tish rozilik matni</h2>
+      <p><code>By creating an account, you agree to the Terms of Use and Privacy Policy.</code></p>
+
+      <h2>4. Foydalanuvchi kontenti</h2>
+      <p>Siz profil rasmi, jamoa logosi va postlar yuklashingiz mumkin. Kontentni yuklash uchun huquqingiz borligini va u qonunlarni yoki uchinchi shaxs huquqlarini buzmasligini tasdiqlaysiz.</p>
+
+      <h2>5. Taqiqlangan xatti-harakatlar</h2>
+      <ul>
+        <li>Hisob, ma'lumot yoki tizimga ruxsatsiz kirish.</li>
+        <li>Noqonuniy, haqoratli, tahdidli yoki huquqbuzar kontent.</li>
+        <li>Xizmat barqarorligiga zarar yetkazuvchi avtomatlashtirilgan suiiste'mol.</li>
+      </ul>
+
+      <h2>6. Cheklash va bekor qilish</h2>
+      <p>Jiddiy yoki takroriy qoidabuzarliklarda TopArena hisobni cheklashi yoki bekor qilishi mumkin.</p>
+
+      <h2>7. O'zgarishlar</h2>
+      <p>TopArena ushbu shartlarni vaqti-vaqti bilan yangilashi mumkin. Muhim yangilanishlar yangi sana bilan e'lon qilinadi.</p>
+
+      <h2>8. Cheklov</h2>
+      <p>TopArena qonun ruxsat bergan doirada "mavjud holatida" taqdim etiladi.</p>
+
+      <h2>9. Aloqa</h2>
+      <p>Email: <a href="mailto:toparena.app@gmail.com">toparena.app@gmail.com</a></p>
+    </section>
+
+    <section class="panel terms" id="terms-ru">
+      <h2>1. Принятие условий</h2>
+      <p>Создавая аккаунт или используя TopArena, вы соглашаетесь с этими Условиями и Политикой конфиденциальности.</p>
+
+      <h2>2. Аккаунты</h2>
+      <ul>
+        <li>Вы отвечаете за точность данных аккаунта.</li>
+        <li>Вы отвечаете за действия, выполненные через ваш аккаунт.</li>
+        <li>Храните данные входа в безопасности.</li>
+      </ul>
+
+      <h2>3. Текст согласия при регистрации</h2>
+      <p><code>By creating an account, you agree to the Terms of Use and Privacy Policy.</code></p>
+
+      <h2>4. Пользовательский контент</h2>
+      <p>Вы можете загружать фото профиля, логотипы команд и публикации. Загружая контент, вы подтверждаете наличие прав и отсутствие нарушения закона или прав третьих лиц.</p>
+
+      <h2>5. Запрещенные действия</h2>
+      <ul>
+        <li>Несанкционированный доступ к аккаунтам, данным или системам.</li>
+        <li>Незаконный, оскорбительный, угрожающий или нарушающий права контент.</li>
+        <li>Автоматизированные злоупотребления, нарушающие стабильность сервиса.</li>
+      </ul>
+
+      <h2>6. Ограничение и прекращение</h2>
+      <p>TopArena может ограничить или удалить аккаунт за серьезные или повторные нарушения.</p>
+
+      <h2>7. Изменения</h2>
+      <p>TopArena может обновлять эти Условия. Существенные изменения публикуются с новой датой.</p>
+
+      <h2>8. Ограничение ответственности</h2>
+      <p>TopArena предоставляется по принципу "как есть" в пределах, разрешенных законом.</p>
+
+      <h2>9. Контакты</h2>
+      <p>Email: <a href="mailto:toparena.app@gmail.com">toparena.app@gmail.com</a></p>
+    </section>
   </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.langbtn');
+    const sections = document.querySelectorAll('.terms');
+
+    function showLang(lang) {
+      sections.forEach((section) => {
+        section.classList.toggle('active', section.id === `terms-${lang}`);
+      });
+      buttons.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => showLang(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>
